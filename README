@@ -16,10 +16,10 @@
 
 ## 🔄 Flow
 
-1. Client sends file metadata (name, type) to Lambda  
-2. Lambda generates presigned upload & download URLs  
-3. Client uploads file directly to S3 using PUT request  
-4. File can be downloaded using presigned GET URL  
+1. Client sends file metadata (name, type) to Lambda
+2. Lambda generates presigned upload & download URLs
+3. Client uploads file directly to S3 using PUT request
+4. File can be downloaded using presigned GET URL
 
 ## 📦 Setup (Local)
 
@@ -55,16 +55,16 @@ REGION=your-region
 
 ## 🧪 Testing
 
-- Call API (POST) to generate URLs  
-- Use `uploadUrl` with PUT request (binary file upload)  
-- Use `downloadUrl` to download file  
+- Call API (POST) to generate URLs
+- Use `uploadUrl` with PUT request (binary file upload)
+- Use `downloadUrl` to download file
 
 ## 📌 Notes
 
-- Uses AWS SDK v3  
-- Uses UUID for unique file naming  
-- Ensure `Content-Type` matches during upload  
-- Presigned URLs expire after a limited time  
+- Uses AWS SDK v3
+- Uses UUID for unique file naming
+- Ensure `Content-Type` matches during upload
+- Presigned URLs expire after a limited time
 
 ## 📂 Project Structure
 
