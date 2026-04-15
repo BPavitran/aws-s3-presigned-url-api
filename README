@@ -23,7 +23,7 @@
 
 ## 📦 Setup (Local)
 
-```bash
+```
 npm install
 npx tsc
 ```
@@ -32,13 +32,13 @@ npx tsc
 
 1. Build project:
 
-```bash
+```
 npx tsc
 ```
 
 2. Zip compiled files:
 
-```bash
+```
 zip -r function.zip dist node_modules package.json
 ```
 
@@ -46,7 +46,7 @@ zip -r function.zip dist node_modules package.json
 
 4. Set environment variables in Lambda:
 
-```text
+```
 S3_BUCKET_NAME=your-bucket-name
 REGION=your-region
 ```
