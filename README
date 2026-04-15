@@ -1,0 +1,79 @@
+# AWS S3 Presigned URL Upload API
+
+## 🚀 Features
+
+* Upload files directly to S3 using presigned URLs
+* Secure file handling without passing files through backend
+* UUID-based file naming to prevent overwrites
+* Supports upload and download via signed URLs
+
+## 🛠 Tech Stack
+
+* Node.js (TypeScript)
+* AWS Lambda
+* AWS S3
+* API Gateway
+
+## 🔄 Flow
+
+1. Client sends file metadata (name, type) to Lambda
+2. Lambda generates presigned upload & download URLs
+3. Client uploads file directly to S3 using PUT request
+4. File can be downloaded using presigned GET URL
+
+## 📦 Setup (Local)
+
+```bash
+npm install
+npx tsc
+```
+
+## ☁️ Deployment
+
+1. Build project:
+
+```bash
+npx tsc
+```
+
+2. Zip compiled files:
+
+```bash
+zip -r function.zip dist node_modules package.json
+```
+
+3. Upload to AWS Lambda
+
+4. Set environment variables in Lambda:
+
+```text
+S3_BUCKET_NAME=your-bucket-name
+REGION=your-region
+```
+
+5. Configure API Gateway trigger
+
+## 🧪 Testing
+
+* Call API (POST) to generate URLs
+* Use `uploadUrl` with PUT request (binary file upload)
+* Use `downloadUrl` to download file
+
+## 📌 Notes
+
+* Uses AWS SDK v3
+* Uses UUID for unique file naming
+* Ensure Content-Type matches during upload
+* Presigned URLs expire after a limited time
+
+## 📂 Project Structure
+
+```
+src/
+  handler.ts
+  presignedUrl.ts
+
+package.json
+tsconfig.json
+README.md
+```
