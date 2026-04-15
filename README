@@ -23,52 +23,43 @@
 
 ## 📦 Setup (Local)
 
-```bash
-npm install
-npx tsc
-```
+npm install  
+npx tsc  
 
 ## ☁️ Deployment
 
 ### 1. Build project
 
-```bash
-npx tsc
-```
+npx tsc  
 
 ### 2. Zip compiled files
 
-```bash
-zip -r function.zip dist node_modules package.json
-```
+zip -r function.zip dist node_modules package.json  
 
 ### 3. Upload to AWS Lambda
 
 ### 4. Set environment variables in Lambda
 
-```env
-S3_BUCKET_NAME=your-bucket-name
-REGION=your-region
-```
+S3_BUCKET_NAME=your-bucket-name  
+REGION=your-region  
 
 ### 5. Configure API Gateway trigger
 
 ## 🧪 Testing
 
 - Call API (POST) to generate URLs
-- Use `uploadUrl` with PUT request (binary file upload)
-- Use `downloadUrl` to download file
+- Use uploadUrl with PUT request (binary file upload)
+- Use downloadUrl to download file
 
 ## 📌 Notes
 
 - Uses AWS SDK v3
 - Uses UUID for unique file naming
-- Ensure `Content-Type` matches during upload
+- Ensure Content-Type matches during upload
 - Presigned URLs expire after a limited time
 
 ## 📂 Project Structure
 
-```text
 src/
   handler.ts
   presignedUrl.ts
@@ -76,4 +67,3 @@ src/
 package.json
 tsconfig.json
 README.md
-```
